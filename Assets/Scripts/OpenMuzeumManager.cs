@@ -49,6 +49,10 @@ public class OpenMuzeumManager : MonoBehaviour
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
+        if (SpawnPoints == null)
+        {
+            return;
+        }
         for (int i = 0; i < SpawnPoints.Length; i++)
         {
             Transform s = SpawnPoints[i];
