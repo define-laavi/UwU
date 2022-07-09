@@ -10,7 +10,7 @@ public abstract class IExhibitionObject : MonoBehaviour
     [field: Header("Placeable")]
     [field: SerializeField] public Vector2Int Size { get; private set; }
     [field: SerializeField] public SlotType SlotType { get; private set; }
-    [field: SerializeField] public List<ExhibitTag> Tags { get; private set; }
+    [field: SerializeField] public List<string> Tags { get; private set; }
 
     public abstract void OnPlace();
     public virtual void OnPickUp(){}
