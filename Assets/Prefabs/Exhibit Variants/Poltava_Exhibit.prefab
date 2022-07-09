@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5569350725328820695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8316706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1138067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1392816
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347631322239489952, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058039227770224472, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: m_Name
+      value: ExhibitBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <Icon>k__BackingField
+      value: 
+      objectReference: {fileID: 21300000, guid: 33334a8e98622524fa22604210f9435e,
+        type: 3}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <Value>k__BackingField
+      value: 99.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <Location>k__BackingField
+      value: ez
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <Condition>k__BackingField
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <Description>k__BackingField
+      value: Battle of poltava i guess - it's a painting
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901635312861872790, guid: 1af719b8f05068240b897ce86d40421f,
+        type: 3}
+      propertyPath: <DisplayName>k__BackingField
+      value: Battle of Poltava
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1af719b8f05068240b897ce86d40421f, type: 3}
