@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Exhibit : IExhibitionObject
 {
-    [Header("Exhibit values")] 
-    [SerializeField] private Sprite icon;
-    [SerializeField, Multiline]private string description;
+    [field:Header("Exhibit values")] 
+    [field:SerializeField] public Sprite Icon{ get; private set; }
+    [field:SerializeField][ field: Multiline]public string Description{ get; private set; }
 
-    [SerializeField] [Range(0, 100)] private int condition;
-    [SerializeField] private double value;
-    [SerializeField] private string location;
+    [field:SerializeField] [field:Range(0, 100)] public int Condition{ get; private set; }
+    [field:SerializeField] public double Value { get; private set; }
+    [field:SerializeField] public string Location{ get; private set; }
     
     public override void OnPlace()
     {
