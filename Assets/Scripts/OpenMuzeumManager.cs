@@ -33,7 +33,7 @@ public class OpenMuzeumManager : MonoBehaviour
 
     IEnumerator SpawnNPC ()
     {
-
+        yield return null;
     }
 
 }

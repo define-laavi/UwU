@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 2388221206112794193}
   - component: {fileID: 6162851421516248346}
   - component: {fileID: 3641206099900238681}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Test1x1Case
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe858866aa25b6e47b35b6011af7f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DisplayName>k__BackingField: Test Case "1x1m"
   <Size>k__BackingField: {x: 1, y: 1}
   <SlotType>k__BackingField: 0
   <Tags>k__BackingField: []
