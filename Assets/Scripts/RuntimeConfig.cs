@@ -8,4 +8,6 @@ public static class RuntimeConfig
     public static bool IsBuilding;
     public static bool IsMouseLocked;
     public static int Money = 4000;
+
+    public static List<Exhibit> OwnedExhibits;
 }
