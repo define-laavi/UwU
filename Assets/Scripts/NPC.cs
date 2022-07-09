@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
 
     private List<RoomInfo> roomInfos = new List<RoomInfo>();
     private int _currentRoomIndex = -1;
-
+    private bool[] exhibitsDone = new bool[0];
     void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -45,7 +45,7 @@ public class NPC : MonoBehaviour
             }
             if (_isGoingToRoom && !_isInRoom)
             {
-                _isGoingToRoom=false;
+                _isGoingToRoom = false;
                 _isInRoom = true;
             }
             if (!_isGoingToRoom && _isInRoom)
@@ -56,15 +56,16 @@ public class NPC : MonoBehaviour
             {
                 if (SetNextRoom())
                 {
-                    ExitMuzeum ();
+                    ExitMuzeum();
                 }
             }
         }
     }
 
-    private void NextExhibit ()
+    private void NextExhibit()
     {
         //TODO go exhibits
+
 
         _isInRoom = false;
 
@@ -87,6 +88,19 @@ public class NPC : MonoBehaviour
         }
 
         _currentRoom = roomInfos[_currentRoomIndex].Area;
+        exhibitsDone = new bool[_currentRoom.objectsInArea.Count];
+        for (int i = 0; i < _currentRoom.objectsInArea.Count; i++)
+        {
+            IExhibitionObject iobj = _currentRoom.objectsInArea[i];
+
+            if (iobj.GetType () == typeof(Exhibit))
+            {
+
+            } else
+            {
+                exhibitsDone[i] = true;
+            }
+        }
         Agent.SetDestination(_currentRoom.entrance.position);
         _isGoingToRoom = true;
         return false;
