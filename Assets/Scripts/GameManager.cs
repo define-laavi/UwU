@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         FadeScreen.DOFade(0, 0);
+        _openerManager = GetComponent<OpenMuzeumManager>();
     }
 
     void Start()
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
         {
             Menus[i].gameObject.SetActive(false);
         }
+        _openerManager.enabled = true;
         yield return new WaitForSeconds(FadeTime * 0.5f);
         PlayerController.enabled = true;
         LockMouse();
