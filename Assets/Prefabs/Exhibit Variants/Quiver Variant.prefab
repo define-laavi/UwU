@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5406703069013687099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Size>k__BackingField.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Description>k__BackingField
+      value: A Scythian quiver made with solid gold that dates back to the 4th century
+        B.C.
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <DisplayName>k__BackingField
+      value: Scythian quiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[0].tag
+      value: Utility
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[1].tag
+      value: Gold
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[2].tag
+      value: Iron Age
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[0].name
+      value: Type
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[1].name
+      value: Material
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[2].name
+      value: Age
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103461382519284852, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_Name
+      value: Quiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.592
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.8014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ffe3608dd816584e9d29804159843e8, type: 3}
+--- !u!4 &1701870519779145655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5406703069013687099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5406703069871654582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1701870519779145655}
+    m_Modifications:
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903734641935266928, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424515423068778186, guid: 2c5c188240a5eed49bd399d77db9a90f,
+        type: 3}
+      propertyPath: m_Name
+      value: golden_quiver_LP
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c5c188240a5eed49bd399d77db9a90f, type: 3}
+--- !u!1 &8534179036010031228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4424515423068778186, guid: 2c5c188240a5eed49bd399d77db9a90f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5406703069871654582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &794191532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534179036010031228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10946487, y: 0.008850933, z: 0.067053445}
+  m_Center: {x: -0.0013039466, y: 0.0005745349, z: 0.0026083924}
