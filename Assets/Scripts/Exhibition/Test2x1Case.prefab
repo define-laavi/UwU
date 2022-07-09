@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe858866aa25b6e47b35b6011af7f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DisplayName>k__BackingField: 
+  <PickedScale>k__BackingField: {x: 0, y: 0, z: 0}
   <Size>k__BackingField: {x: 2, y: 1}
   <SlotType>k__BackingField: 0
   <Tags>k__BackingField: []
@@ -143,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 8081396275179015888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 677834166660897431}

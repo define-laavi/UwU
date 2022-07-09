@@ -4,11 +4,12 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using Unity.AI.Navigation;
 
 public class OpenMuzeumManager : MonoBehaviour
 {
     public static OpenMuzeumManager Instance;
-
+    
     [SerializeField] private float MuzeumOpenTime = 30;
     [SerializeField] private GameObject NPCpref;
     [SerializeField] private Transform[] SpawnPoints;
@@ -16,6 +17,7 @@ public class OpenMuzeumManager : MonoBehaviour
     public ExhibitionArea[] Areas;
 
     [SerializeField] private Transform EnterPoint;
+    [SerializeField] private NavMeshSurface Surface;
 
     private float _timer;
 
@@ -33,6 +35,11 @@ public class OpenMuzeumManager : MonoBehaviour
     {
         _timer = 0;
 
+        for (int i = 0; i < Areas.Length; i++)
+        {
+            Areas[i].Recalculate();
+        }
+        Surface.BuildNavMesh();
         StartCoroutine(SpawnNPC());
     }
 

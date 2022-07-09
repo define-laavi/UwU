@@ -35,13 +35,7 @@ public class ExhibitionArea : MonoBehaviour
     public void Recalculate()
     {
         objectsInArea.Clear();
-        var inside = Physics.OverlapBox(transform.position, transform.lossyScale / 2f, transform.rotation);
-        foreach (var value in inside)
-        {
-            if (value.TryGetComponent<IExhibitionObject>(out var component))
-            {
-                objectsInArea.Add(component);
-            }
-        }
+
+        objectsInArea.AddRange(transform.GetComponentsInChildren<IExhibitionObject>());
     }
 }
