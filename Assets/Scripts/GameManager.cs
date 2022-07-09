@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform OpenMuzeumPlayerPosition;
     [SerializeField] private Transform CloseMuzuemPlayerPosition;
 
+    [SerializeField] private Transform[] Menus;
+
     private Camera _cam;
     private int interactFilter;
 
@@ -42,12 +44,11 @@ public class GameManager : MonoBehaviour
 
         RuntimeConfig.MuzeumOpened = false;
         RuntimeConfig.IsBuilding = false;
-        RuntimeConfig.IsMouseLocked = true;
 
         LockMouse();
     }
 
-    float _timer = 0;
+    [SerializeField] private float _timer = 0;
 
     void Update()
     {
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > MuzeumOpenTime)
             {
+                _timer = float.NegativeInfinity;
                 SwitchMode();
             }
         }
@@ -114,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchMode ()
     {
-        if (RuntimeConfig.MuzeumOpened)
+        if (!RuntimeConfig.MuzeumOpened)
         {
             StartCoroutine (FadeOpenMuzeum());
         } else
@@ -126,12 +128,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeCloseMuzeum ()
     {
+        _timer = 0;
         HintText.text = "";
         PlayerController.enabled = false;
         FadeScreen.DOFade(1, FadeTime * 0.66f);
         yield return new WaitForSeconds(FadeTime * 0.66f);
-        PlayerController.enabled = true;
+        PlayerController.transform.SetPositionAndRotation(CloseMuzuemPlayerPosition.position, CloseMuzuemPlayerPosition.rotation);
         RuntimeConfig.MuzeumOpened = false;
+        for (int i = 0; i < Menus.Length; i++)
+        {
+            Menus[i].gameObject.SetActive(false);
+        }
+        DayLogScreen.gameObject.SetActive(true);
+        yield return new WaitForSeconds(FadeTime * 0.5f);
+        UnlockMouse();
         FadeScreen.DOFade(0, FadeTime * 0.33f);
         yield return new WaitForSeconds(FadeTime * 0.33f);
     }
@@ -142,8 +152,15 @@ public class GameManager : MonoBehaviour
         PlayerController.enabled = false;
         FadeScreen.DOFade(1, FadeTime * 0.66f);
         yield return new WaitForSeconds(FadeTime * 0.66f);
-        PlayerController.enabled = true;
+        PlayerController.transform.SetPositionAndRotation(OpenMuzeumPlayerPosition.position, OpenMuzeumPlayerPosition.rotation);
         RuntimeConfig.MuzeumOpened = true;
+        for (int i = 0; i < Menus.Length; i++)
+        {
+            Menus[i].gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(FadeTime * 0.5f);
+        PlayerController.enabled = true;
+        LockMouse();
         FadeScreen.DOFade(0, FadeTime * 0.33f);
         yield return new WaitForSeconds(FadeTime * 0.33f);
 

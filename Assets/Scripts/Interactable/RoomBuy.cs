@@ -12,9 +12,9 @@ public class RoomBuy : MonoBehaviour, IInteractible
     {
         if (RuntimeConfig.Money >= money)
         {
-            return "Buy room";
+            return $"Buy room for {money}$";
         }
-        return "Not enought money";
+        return $"Not enought money ({money}$)";
     }
 
     public bool Interact()

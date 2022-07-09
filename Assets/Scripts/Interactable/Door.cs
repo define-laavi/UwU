@@ -8,11 +8,15 @@ public class Door : MonoBehaviour, IInteractible
 
     public string Highlight()
     {
-        return RuntimeConfig.MuzeumOpened ? "Close Muzeum" : "Open Muzeum";
+        return RuntimeConfig.MuzeumOpened ? "" : "Open Muzeum";
     }
 
     public bool Interact()
     {
+        if (RuntimeConfig.MuzeumOpened)
+        {
+            return false;
+        }
         OnInteract.Invoke();
         return true;
     }
