@@ -4,8 +4,10 @@ using UnityEngine;
 
 public interface IInteractible
 {
-    string Highlight(Pickable pick);
-    GameObject Use(Pickable pick);
+    string Highlight();
+
+    /// <returns>if lock movement</returns>
+    bool Interact();
 }
 public class Pickable : MonoBehaviour
 {
