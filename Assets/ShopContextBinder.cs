@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CatalogueContextBinder : MonoBehaviour
+public class ShopContextBinder : MonoBehaviour
 {
     [SerializeField] private Image iconContext;
     [SerializeField] private TMPro.TextMeshProUGUI nameContext;
@@ -37,10 +36,10 @@ public class CatalogueContextBinder : MonoBehaviour
         get => current;
         set
         {
-            if (RuntimeConfig.OwnedExhibits.Count == 0)
+            if (RuntimeConfig.BuyableExhibits.Count == 0)
                 return;
-            current = Mathf.Clamp(value, 0, RuntimeConfig.OwnedExhibits.Count);
-            Context = RuntimeConfig.OwnedExhibits[current];
+            current = Mathf.Clamp(value, 0, RuntimeConfig.BuyableExhibits.Count);
+            Context = RuntimeConfig.BuyableExhibits[current];
         }
     }
 
@@ -66,20 +65,23 @@ public class CatalogueContextBinder : MonoBehaviour
 
     public void Next()
     {
-        Current = (Current + 1 + RuntimeConfig.OwnedExhibits.Count) % RuntimeConfig.OwnedExhibits.Count;
+        Current = (Current + 1 + RuntimeConfig.BuyableExhibits.Count) % RuntimeConfig.BuyableExhibits.Count;
     }
     
     public void Previous()
     {
-        Current = (Current - 1 + RuntimeConfig.OwnedExhibits.Count) % RuntimeConfig.OwnedExhibits.Count;
-    }
-    
-    public void Sell()
-    {
-        RuntimeConfig.BuyableExhibits.Add(_context);
-        RuntimeConfig.OwnedExhibits.Remove(_context);
-        Current = Current;
-        RuntimeConfig.Money += _context.Value * 0.8;
+        Current = (Current - 1 + RuntimeConfig.BuyableExhibits.Count) % RuntimeConfig.BuyableExhibits.Count;
     }
 
+    public void Buy()
+    {
+        if (RuntimeConfig.Money >= _context.Value)
+        {
+            RuntimeConfig.BuyableExhibits.Remove(_context);
+            RuntimeConfig.OwnedExhibits.Add(_context);
+            Current = Current;
+            RuntimeConfig.Money -= _context.Value;
+        }
+    }
+    
 }
