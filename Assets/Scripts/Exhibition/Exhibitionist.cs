@@ -22,12 +22,14 @@ public class Exhibitionist : MonoBehaviour
                 {
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
+                        objectTransform.parent = null;
                         objectTransform.transform.localScale = highlightedPickable.PickedScale;
                         objectTransform.parent = holder;
                         objectTransform.localPosition = Vector3.zero;
                         objectTransform.localRotation = Quaternion.identity;
 
                         ExhibitionistState = ExhibitionistState.Holding;
+                        highlightedPickable.OnPlace();
                     }
                 }
                 break;
@@ -43,6 +45,8 @@ public class Exhibitionist : MonoBehaviour
                         pickableTransform.position = transformation.position;
                         pickableTransform.rotation = transformation.rotation;
                         pickableTransform.localScale = Vector3.one;
+                        pickableTransform.parent = SlotRaycaster.GetActiveGrid().transform;
+
 
                         ExhibitionistState = ExhibitionistState.Empty;
 
