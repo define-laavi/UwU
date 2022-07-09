@@ -14,4 +14,12 @@ public class ExhibitionCase : IExhibitionObject
             childGrid.Active = true;
         }
     }
+
+    public override void OnPickUp()
+    {
+        foreach (var childGrid in childGrids)
+        {
+            childGrid.Active = false;
+        }
+    }
 }

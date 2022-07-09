@@ -13,6 +13,7 @@ public abstract class IExhibitionObject : MonoBehaviour
     [field: SerializeField] public List<ExhibitTag> Tags { get; private set; }
 
     public abstract void OnPlace();
+    public virtual void OnPickUp(){}
     public string Highlight()
     {
         return DisplayName;
@@ -26,6 +27,7 @@ public abstract class IExhibitionObject : MonoBehaviour
             return false;
         }
 
+        OnPickUp();
         transform = this.transform;
         return true;
     }
