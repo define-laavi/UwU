@@ -6,7 +6,7 @@ using UnityEngine;
 public class ExhibitionArea : MonoBehaviour
 {
     public Transform entrance, exit;
-
+    public bool IsAvailable = false;
     public List<IExhibitionObject> objectsInArea = new List<IExhibitionObject>();
     [Header("Debug")]
     public bool debugRecalculate;
@@ -30,6 +30,11 @@ public class ExhibitionArea : MonoBehaviour
             debugRecalculate = false;
             Recalculate();
         }
+    }
+
+    public void Unlock ()
+    {
+        IsAvailable = true;
     }
 
     public void Recalculate()
