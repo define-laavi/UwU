@@ -34,8 +34,11 @@ public class Exhibitionist : MonoBehaviour
                 {
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
+                        ExhibitionArea Area = objectTransform.GetComponentInParent<ExhibitionArea>();
+
                         RuntimeConfig.IsBuilding = false;
                         objectTransform.parent = null;
+
                         objectTransform.transform.localScale = highlightedPickable.PickedScale;
                         objectTransform.parent = holder;
                         objectTransform.localPosition = Vector3.zero;
@@ -43,6 +46,8 @@ public class Exhibitionist : MonoBehaviour
 
                         ExhibitionistState = ExhibitionistState.Holding;
                         highlightedPickable.OnPlace();
+
+                        Area.Recalculate();
                     }
                 }
                 break;
@@ -62,6 +67,8 @@ public class Exhibitionist : MonoBehaviour
                         pickableTransform.localScale = Vector3.one;
                         pickableTransform.parent = SlotRaycaster.GetActiveGrid().transform;
 
+                        ExhibitionArea Area = pickableTransform.GetComponentInParent<ExhibitionArea>();
+                        Area.Recalculate();
 
                         ExhibitionistState = ExhibitionistState.Empty;
 
