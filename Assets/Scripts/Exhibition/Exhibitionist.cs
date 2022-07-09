@@ -22,6 +22,7 @@ public class Exhibitionist : MonoBehaviour
                 {
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
+                        RuntimeConfig.IsBuilding = false;
                         objectTransform.parent = null;
                         objectTransform.transform.localScale = highlightedPickable.PickedScale;
                         objectTransform.parent = holder;
@@ -40,6 +41,7 @@ public class Exhibitionist : MonoBehaviour
                         pickableHintText.text = "Press '<b>LMB</b>' to place";
                         if (Input.GetMouseButtonDown(0))
                         {
+                        RuntimeConfig.IsBuilding = true;
                         var pickableTransform = highlightedPickable.transform;
                         pickableTransform.parent = null;
                         pickableTransform.position = transformation.position;
@@ -63,7 +65,7 @@ public class Exhibitionist : MonoBehaviour
         pickableHintText.text = "";
         
         var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (RuntimeConfig.IsBuilding || !Physics.Raycast(ray, out var hit, 2)) return;
+        if (!Physics.Raycast(ray, out var hit, 2)) return;
         
         var i = hit.collider.GetComponentInParent<IExhibitionObject>();
         if (i == null) return;

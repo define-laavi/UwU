@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
         LockMouse();
     }
 
-    [SerializeField] private float _timer = 0;
-
     void Update()
     {
         if (RuntimeConfig.IsMouseLocked && !RuntimeConfig.IsBuilding)

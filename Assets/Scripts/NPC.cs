@@ -64,12 +64,20 @@ public class NPC : MonoBehaviour
 
     private void NextExhibit()
     {
-        //TODO go exhibits
+        List<int> indexes = new List<int>();
+        for (int i = 0; i < exhibitsDone.Length; i++)
+        {
+            if (!exhibitsDone[i])
+            {
+                indexes.Add(i);
+            }
+        }
 
-
-        _isInRoom = false;
-
-        Agent.SetDestination(_currentRoom.exit.position);
+        if (indexes.Count == 0)
+        {
+            _isInRoom = false;
+            Agent.SetDestination(_currentRoom.exit.position);
+        }
     }
 
     /// <returns>if <see langword="true"/> exit muzeum</returns>
@@ -89,18 +97,45 @@ public class NPC : MonoBehaviour
 
         _currentRoom = roomInfos[_currentRoomIndex].Area;
         exhibitsDone = new bool[_currentRoom.objectsInArea.Count];
+        IExhibitionObject[] walls = new IExhibitionObject[_currentRoom.objectsInArea.Count];
+        /*
         for (int i = 0; i < _currentRoom.objectsInArea.Count; i++)
         {
             IExhibitionObject iobj = _currentRoom.objectsInArea[i];
 
             if (iobj.GetType () == typeof(Exhibit))
             {
-
-            } else
-            {
-                exhibitsDone[i] = true;
+                if (iobj.SlotType == SlotType.Wall)
+                {
+                    walls[i] = iobj;
+                }
+                else
+                {
+                    exhibitsDone[i] = true;
+                }
             }
         }
+        
+        for (int i = 0;i < walls.Length;i++)
+        {
+            if (walls[i] == null)
+            {
+                continue;
+            }
+
+            IExhibitionObject wall = walls[i];
+
+            for (int j=i+1; j<walls.Length;j++)
+            {
+                if (walls[j] == null)
+                {
+                    continue;
+                }
+
+
+            }
+        }*/
+
         Agent.SetDestination(_currentRoom.entrance.position);
         _isGoingToRoom = true;
         return false;
