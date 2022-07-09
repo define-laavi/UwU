@@ -9,11 +9,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [NonSerialized] public GameManager Instance;
+    public static GameManager Instance;
 
     [SerializeField] private Image FadeScreen;
     [SerializeField] private float FadeTime;
-    [SerializeField] private float MuzeumOpenTime;
     [SerializeField] private FirstPersonController PlayerController;
     [SerializeField] private TextMeshProUGUI HintText;
 
@@ -23,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform CloseMuzuemPlayerPosition;
 
     [SerializeField] private Transform[] Menus;
+
+    private OpenMuzeumManager _openerManager;
 
     private Camera _cam;
     private int interactFilter;
@@ -52,15 +53,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (RuntimeConfig.MuzeumOpened)
-        {
-            _timer += Time.deltaTime;
-            if (_timer > MuzeumOpenTime)
-            {
-                _timer = float.NegativeInfinity;
-                SwitchMode();
-            }
-        }
         if (RuntimeConfig.IsMouseLocked && !RuntimeConfig.IsBuilding)
         {
             SendRay();
@@ -128,9 +120,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeCloseMuzeum ()
     {
-        _timer = 0;
         HintText.text = "";
         PlayerController.enabled = false;
+
+        _openerManager.enabled = false;
+
         FadeScreen.DOFade(1, FadeTime * 0.66f);
         yield return new WaitForSeconds(FadeTime * 0.66f);
         PlayerController.transform.SetPositionAndRotation(CloseMuzuemPlayerPosition.position, CloseMuzuemPlayerPosition.rotation);
@@ -164,7 +158,7 @@ public class GameManager : MonoBehaviour
         FadeScreen.DOFade(0, FadeTime * 0.33f);
         yield return new WaitForSeconds(FadeTime * 0.33f);
 
-
+        _openerManager.enabled = true;
     }
 
     public void LockMouse()

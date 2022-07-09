@@ -18,7 +18,7 @@ public class RoomEdit : MonoBehaviour, IInteractible
 
     public string Highlight()
     {
-        if (_enable)
+        if (!_enable)
         {
             return "";
         }
@@ -28,7 +28,7 @@ public class RoomEdit : MonoBehaviour, IInteractible
 
     public bool Interact()
     {
-        if (_enable)
+        if (!_enable)
         {
             return false;
         }
