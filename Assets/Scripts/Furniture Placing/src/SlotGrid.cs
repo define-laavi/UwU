@@ -8,7 +8,18 @@ using UnityEngine;
 public class SlotGrid : MonoBehaviour
 {
     [field: SerializeField] public SlotType SlotType { get; private set; }
-    [field: SerializeField] public bool Active { get; set; }
+    [SerializeField]
+    private bool _active;
+    public bool Active
+    {
+        get => _active;
+        set
+        {
+            _active = value;
+            OnActiveChanged();
+        }
+    }
+
     [SerializeField] private Vector2 slotSize = Vector2.one * 0.75f;
     [SerializeField] private Vector2 spacingSize = Vector2.one * 0.25f;
 
@@ -40,15 +51,15 @@ public class SlotGrid : MonoBehaviour
         //Fix falling out of bounds
         var distantFixX = 0f;
         if (output.x + objectSize.x / 2f > lossyScale.x / 2f)
-            distantFixX = -(slotSize.x + spacingSize.x) * Mathf.Round(Mathf.Abs(output.x + objectSize.x / 2f - lossyScale.x / 2f));
+            distantFixX = -(slotSize.x + spacingSize.x) * Mathf.Ceil(Mathf.Abs(output.x + objectSize.x / 2f - lossyScale.x / 2f));
         else if (output.x - objectSize.x / 2f < -lossyScale.x / 2f)
-            distantFixX = (slotSize.x + spacingSize.x) * Mathf.Round(Mathf.Abs(output.x - objectSize.x / 2f + lossyScale.x / 2f));
+            distantFixX = (slotSize.x + spacingSize.x) * Mathf.Ceil(Mathf.Abs(output.x - objectSize.x / 2f + lossyScale.x / 2f));
 
         var distantFixZ = 0f;
         if (output.z + objectSize.z / 2f > lossyScale.z / 2f)
-            distantFixZ = -(slotSize.y + spacingSize.y) * Mathf.Round(Mathf.Abs(output.z + objectSize.z / 2f - lossyScale.z / 2f));
+            distantFixZ = -(slotSize.y + spacingSize.y) * Mathf.Ceil(Mathf.Abs(output.z + objectSize.z / 2f - lossyScale.z / 2f));
         else if (output.z - objectSize.z / 2f < -lossyScale.z / 2f)
-            distantFixZ = (slotSize.y + spacingSize.y) * Mathf.Round(Mathf.Abs(output.z - objectSize.z / 2f + lossyScale.z / 2f));
+            distantFixZ = (slotSize.y + spacingSize.y) * Mathf.Ceil(Mathf.Abs(output.z - objectSize.z / 2f + lossyScale.z / 2f));
 
         return (matrix.MultiplyPoint(output + new Vector3(distantFixX, 0, distantFixZ)), transform.rotation);
     }
@@ -56,6 +67,12 @@ public class SlotGrid : MonoBehaviour
     #region Unity
 
     private void Start()
+    {
+        if(Active)
+            DrawPreviews();
+    }
+
+    private void DrawPreviews()
     {
         var points = GetGridPoints();
         foreach (var point in points)
@@ -65,8 +82,18 @@ public class SlotGrid : MonoBehaviour
             go.transform.rotation = transform.rotation;
             go.transform.parent = transform;
             
-            go.transform.localPosition = new Vector3(point.x / transform.localScale.x, 0, point.z / transform.localScale.z);
+            go.transform.localPosition = new Vector3(point.x / transform.lossyScale.x, 0, point.z / transform.lossyScale.z);
+            _previews.Add(go);
         }
+    }   
+
+    private void DestroyPreviews()
+    {
+        foreach (var preview in _previews)
+        {
+            Destroy(preview);
+        }
+        _previews.Clear();
     }
 
     #endregion
@@ -92,6 +119,14 @@ public class SlotGrid : MonoBehaviour
     private float ToNearestT(float value, float t)
     {
         return Mathf.RoundToInt(value / t) * t;
+    }
+
+    private void OnActiveChanged()
+    {
+        if(Active)
+            DrawPreviews();
+        else
+            DestroyPreviews();
     }
     #endregion
 
@@ -126,6 +161,9 @@ public class SlotGrid : MonoBehaviour
         Gizmos.DrawLine(new Vector3(-slotSize.x, 0f, +slotSize.y)/2f + offset, new Vector3(+slotSize.x, 0f, +slotSize.y)/2f + offset);
     }
     #endregion
+
+    private List<GameObject> _previews = new List<GameObject>();
+
 }
 
 public enum SlotType { Floor, Wall, Item }
