@@ -34,6 +34,7 @@ public class Exhibitionist : MonoBehaviour
                 {
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
+                        highlightedPickable = objectTransform.GetComponent<IExhibitionObject>();
                         RuntimeConfig.IsBuilding = false;
                         objectTransform.parent = null;
                         objectTransform.transform.localScale = highlightedPickable.PickedScale;
@@ -84,7 +85,7 @@ public class Exhibitionist : MonoBehaviour
         if (i == null) return;
         
         highlightedPickable = i;
-        pickableHintText.text = $"Press '<b>RMB</b>' to pick up <b>{i.Highlight()}";
+        pickableHintText.text = i.Highlight();
     }
 }
 
