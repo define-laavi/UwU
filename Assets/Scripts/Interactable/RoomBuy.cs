@@ -23,7 +23,6 @@ public class RoomBuy : MonoBehaviour, IInteractible
         {
             RuntimeConfig.Money -= money;
             OnInteract.Invoke();
-            return false;
         }
         return false;
     }

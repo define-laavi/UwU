@@ -13,9 +13,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Image FadeScreen;
     [SerializeField] private float FadeTime;
+    [SerializeField] private float MuzeumOpenTime;
     [SerializeField] private FirstPersonController PlayerController;
-
     [SerializeField] private TextMeshProUGUI HintText;
+
+    [SerializeField] private Transform DayLogScreen;
+
+    [SerializeField] private Transform OpenMuzeumPlayerPosition;
+    [SerializeField] private Transform CloseMuzuemPlayerPosition;
 
     private Camera _cam;
     private int interactFilter;
@@ -42,8 +47,18 @@ public class GameManager : MonoBehaviour
         LockMouse();
     }
 
+    float _timer = 0;
+
     void Update()
     {
+        if (RuntimeConfig.MuzeumOpened)
+        {
+            _timer += Time.deltaTime;
+            if (_timer > MuzeumOpenTime)
+            {
+                SwitchMode();
+            }
+        }
         if (RuntimeConfig.IsMouseLocked && !RuntimeConfig.IsBuilding)
         {
             SendRay();
@@ -101,21 +116,38 @@ public class GameManager : MonoBehaviour
     {
         if (RuntimeConfig.MuzeumOpened)
         {
-
+            StartCoroutine (FadeOpenMuzeum());
+        } else
+        {
+            StartCoroutine(FadeCloseMuzeum());
         }
 
-        StartCoroutine (Fade(null));
     }
 
-    IEnumerator Fade(UnityAction changeState)
+    IEnumerator FadeCloseMuzeum ()
     {
         HintText.text = "";
         PlayerController.enabled = false;
         FadeScreen.DOFade(1, FadeTime * 0.66f);
         yield return new WaitForSeconds(FadeTime * 0.66f);
-        changeState?.Invoke();
-        FadeScreen.DOFade(0, FadeTime * 0.33f);
         PlayerController.enabled = true;
+        RuntimeConfig.MuzeumOpened = false;
+        FadeScreen.DOFade(0, FadeTime * 0.33f);
+        yield return new WaitForSeconds(FadeTime * 0.33f);
+    }
+
+    IEnumerator FadeOpenMuzeum()
+    {
+        HintText.text = "";
+        PlayerController.enabled = false;
+        FadeScreen.DOFade(1, FadeTime * 0.66f);
+        yield return new WaitForSeconds(FadeTime * 0.66f);
+        PlayerController.enabled = true;
+        RuntimeConfig.MuzeumOpened = true;
+        FadeScreen.DOFade(0, FadeTime * 0.33f);
+        yield return new WaitForSeconds(FadeTime * 0.33f);
+
+
     }
 
     public void LockMouse()
