@@ -10,10 +10,22 @@ public class Exhibitionist : MonoBehaviour
 
     private IExhibitionObject highlightedPickable;
     private SlotGrid highlightedSlotGrid;
+
+    private int rotation;
     public ExhibitionistState ExhibitionistState { get; private set; }
     void Update()
     {
         pickableHintText.text = "";
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            rotation = (rotation + 1) % 4;
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            rotation = (rotation - 1 + 4) % 4;
+        }
+        
         switch (ExhibitionistState)
         {
             case ExhibitionistState.Empty:
@@ -35,8 +47,9 @@ public class Exhibitionist : MonoBehaviour
                 }
                 break;
             case ExhibitionistState.Holding:
-                if (SlotRaycaster.TryGetTargetedTransformation(highlightedPickable.Size, highlightedPickable.SlotType,
-                        out var transformation))
+                if (SlotRaycaster.TryGetTargetedTransformation(new Vector2Int((rotation % 2 == 0) ? highlightedPickable.Size.x : highlightedPickable.Size.y,
+                            (rotation % 2 == 0) ? highlightedPickable.Size.y : highlightedPickable.Size.x),
+                        highlightedPickable.SlotType, out var transformation))
                     {
                         pickableHintText.text = "Press '<b>LMB</b>' to place";
                         if (Input.GetMouseButtonDown(0))
@@ -45,7 +58,7 @@ public class Exhibitionist : MonoBehaviour
                         var pickableTransform = highlightedPickable.transform;
                         pickableTransform.parent = null;
                         pickableTransform.position = transformation.position;
-                        pickableTransform.rotation = transformation.rotation;
+                        pickableTransform.rotation = transformation.rotation*Quaternion.Euler(0,rotation*90, 0);
                         pickableTransform.localScale = Vector3.one;
                         pickableTransform.parent = SlotRaycaster.GetActiveGrid().transform;
 
