@@ -30,6 +30,10 @@ public class NPC : MonoBehaviour
         ExhibitionArea[] ars = OpenMuzeumManager.Instance.Areas;
         for (int i = 0; i < ars.Length; i++)
         {
+            if (!ars[i].IsAvailable)
+            {
+                continue;
+            }
             RoomInfo roomInfo = new RoomInfo();
             roomInfo.Area = ars[i];
             roomInfo.Done = false;
