@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
         if (!_lock && Input.GetKeyDown (KeyCode.Return))
         {
             source.Play();
+            StartCoroutine(Fade());
 
         }
     }
