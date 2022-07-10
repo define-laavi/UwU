@@ -10,7 +10,7 @@ public class ExhibitionArea : MonoBehaviour
     public List<IExhibitionObject> objectsInArea = new List<IExhibitionObject>();
     public Vector2 Area = Vector2.one;
 
-    public float Prestige;
+    public int Prestige;
 
     [Header("Debug")]
     public bool debugRecalculate;
@@ -92,5 +92,6 @@ public class ExhibitionArea : MonoBehaviour
             }
             Prestige += maxVal - 1;
         }
+        PrestigeManager.Recalculate();
     }
 }
