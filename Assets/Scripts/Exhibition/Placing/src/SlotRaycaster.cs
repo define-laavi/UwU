@@ -17,7 +17,7 @@ public class SlotRaycaster
 
         transformation = (Vector3.zero, Quaternion.identity);
         
-        if (!Physics.Raycast(ray, out var raycastHit) || !raycastHit.transform.TryGetComponent<SlotGrid>(out var slotGrid))
+        if (!Physics.Raycast(ray, out var raycastHit, 4) || !raycastHit.transform.TryGetComponent<SlotGrid>(out var slotGrid))
             return false;
 
         if (slotGrid.SlotType != type || !slotGrid.Active)
