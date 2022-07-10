@@ -203,6 +203,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
+      propertyPath: <Size>k__BackingField.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Size>k__BackingField.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
       propertyPath: <SlotType>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -215,6 +225,21 @@ PrefabInstance:
         type: 3}
       propertyPath: <DisplayName>k__BackingField
       value: Entry into Jerusalem
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <PickedScale>k__BackingField.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <PickedScale>k__BackingField.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <PickedScale>k__BackingField.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
