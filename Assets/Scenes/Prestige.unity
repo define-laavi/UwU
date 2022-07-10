@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 455361321}
   - component: {fileID: 455361320}
   - component: {fileID: 455361319}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 496624519}
   - component: {fileID: 496624518}
   - component: {fileID: 496624517}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 583952794}
   - component: {fileID: 583952793}
   - component: {fileID: 583952792}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 602138359}
   - component: {fileID: 602138361}
   - component: {fileID: 602138360}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1337,7 @@ GameObject:
   - component: {fileID: 635539206}
   - component: {fileID: 635539208}
   - component: {fileID: 635539207}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1789,7 +1789,7 @@ GameObject:
   - component: {fileID: 884629368}
   - component: {fileID: 884629367}
   - component: {fileID: 884629366}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +1852,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 935605507}
   - component: {fileID: 935605506}
   - component: {fileID: 935605505}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1999,7 +1999,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1ee8b9866e3759b4ab159ce58be82c8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2176,7 +2176,7 @@ GameObject:
   - component: {fileID: 1042614511}
   - component: {fileID: 1042614510}
   - component: {fileID: 1042614509}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2605,7 +2605,7 @@ GameObject:
   - component: {fileID: 1472543695}
   - component: {fileID: 1472543694}
   - component: {fileID: 1472543693}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2861,7 +2861,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 93fe43394d2d9044b8540ac1d0ecc48d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2952,7 +2952,7 @@ GameObject:
   - component: {fileID: 1798153111}
   - component: {fileID: 1798153110}
   - component: {fileID: 1798153109}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cylinder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3219,7 +3219,7 @@ GameObject:
   - component: {fileID: 2055076937}
   - component: {fileID: 2055076936}
   - component: {fileID: 2055076935}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,6 +3389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: near clip plane
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5439008855706983793, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
