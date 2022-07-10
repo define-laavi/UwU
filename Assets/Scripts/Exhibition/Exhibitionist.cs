@@ -155,7 +155,7 @@ public class Exhibitionist : MonoBehaviour
                 group.DOKill();
                 group.DOFade(0, 2 * group.alpha / 1f);
                 DescriptionScaler.DOKill();
-                DescriptionScaler.DOSizeDelta(Vector2.zero, 2f * group.alpha /1f);
+                DescriptionScaler.DOScale(Vector3.zero, 2f * group.alpha /1f);
             }
         } else {
             if (smag > MoveThreshold)
@@ -185,7 +185,7 @@ public class Exhibitionist : MonoBehaviour
     {
         
         group.DOFade(1, 2f);
-        DescriptionScaler.DOSizeDelta(new Vector2(200, 250), 2f);
+        DescriptionScaler.DOScale(Vector3.one, 2f);
 
         yield return new WaitForSeconds(2f);
     }

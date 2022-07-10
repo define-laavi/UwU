@@ -22,6 +22,9 @@ public class PrestigeManager : MonoBehaviour
     public int _currentLvl;
     public List<Lvl> Levels = new List<Lvl>();
 
+    public int _currentNPC = 0;
+    public GameObject NPC;
+
     void Awake()
     {
         Instance = this;
@@ -99,7 +102,23 @@ public class PrestigeManager : MonoBehaviour
         }
         Morb.levelStartPoint = Levels[_currentLvl - 1].PrestigeThreshold;
     }
+
+    IEnumerator SpawnNPC ()
+    {
+        float waitTime;
+        while (true)
+        {
+            waitTime = Random.Range(0.6f, 1.5f);
+
+            yield return new WaitForSeconds (waitTime);
+
+            Instantiate(NPC);
+            
+        }
+    }
 }
+
+
 [System.Serializable]
 public class Lvl
 {
