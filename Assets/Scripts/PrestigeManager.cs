@@ -19,12 +19,16 @@ public class PrestigeManager : MonoBehaviour
     public Image FadeImage;
     public TextMeshProUGUI FadeText;
 
+    public Transform LvlUPopUP;
+    [Range(0f,10f)]public float LvlUpopUPTimeOnScreen = 3f;
+
     public int _currentLvl;
     public List<Lvl> Levels = new List<Lvl>();
-
+    public float PrestigePeoplePercentege = 0.6f;
     public int _currentNPC = 0;
-    public GameObject NPC;
-
+    public GameObject NPCpref;
+    public Transform SpawnPoint;
+    public Transform EndPoint;
     void Awake()
     {
         Instance = this;
@@ -33,13 +37,19 @@ public class PrestigeManager : MonoBehaviour
     void Start()
     {
         _currentLvl = 0;
-        SetMorb();
+        StartCoroutine(SpawnNPC());
         Prestige = 0;
-        Areas[0].gameObject.SetActive(true);/*
+        Areas[0].gameObject.SetActive(true);
+        Areas[0].Recalculate();
+        SetMorb();
+        /*
         for (int i = 1; i < Areas.Count; i++)
         {
             Areas[i].gameObject.SetActive(false);
         }*/
+
+        LvlUPopUP.gameObject.SetActive(true);
+
     }
 
     public static void Recalculate()
@@ -70,7 +80,9 @@ public class PrestigeManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine (LvlUp());
                 SetMorb();
+                
             }
         }
         else
@@ -78,6 +90,13 @@ public class PrestigeManager : MonoBehaviour
             Morb.currentValue = Prestige;
         }
 
+    }
+
+    IEnumerator LvlUp ()
+    {
+        LvlUPopUP.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        LvlUPopUP.gameObject.SetActive(false);
     }
 
     IEnumerator End()
@@ -112,8 +131,12 @@ public class PrestigeManager : MonoBehaviour
 
             yield return new WaitForSeconds (waitTime);
 
-            Instantiate(NPC);
-            
+            Instantiate(NPCpref, SpawnPoint.position, Quaternion.Euler (0,Random.Range(0,360),0));
+            _currentNPC++;
+            while (_currentNPC > Prestige * PrestigePeoplePercentege)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 }
