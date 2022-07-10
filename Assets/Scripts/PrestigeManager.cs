@@ -20,9 +20,9 @@ public class PrestigeManager : MonoBehaviour
     public TextMeshProUGUI FadeText;
 
     public int _currentLvl;
-    public List<Lvl> Levels = new List<Lvl> ();
+    public List<Lvl> Levels = new List<Lvl>();
 
-    void Awake ()
+    void Awake()
     {
         Instance = this;
     }
@@ -32,19 +32,19 @@ public class PrestigeManager : MonoBehaviour
         _currentLvl = 0;
         SetMorb();
         Prestige = 0;
-        Areas[0].gameObject.SetActive(true);
+        Areas[0].gameObject.SetActive(true);/*
         for (int i = 1; i < Areas.Count; i++)
         {
             Areas[i].gameObject.SetActive(false);
-        }
+        }*/
     }
 
-    public static void Recalculate ()
+    public static void Recalculate()
     {
         Instance.RecalculatePrestige();
     }
 
-    private void RecalculatePrestige ()
+    private void RecalculatePrestige()
     {
         Prestige = 0;
         for (int i = 0; i < Areas.Count; i++)
@@ -59,19 +59,25 @@ public class PrestigeManager : MonoBehaviour
 
         if (Prestige > Levels[_currentLvl].PrestigeThreshold)
         {
+            Levels[_currentLvl].OnEnd.Invoke();
             _currentLvl++;
-            if (SetMorb())
+            if (_currentLvl >= Levels.Count)
             {
                 StartCoroutine(End());
             }
-        } else
+            else
+            {
+                SetMorb();
+            }
+        }
+        else
         {
             Morb.currentValue = Prestige;
         }
 
     }
 
-    IEnumerator End ()
+    IEnumerator End()
     {
         FadeImage.DOFade(1, 3f);
         yield return new WaitForSeconds(3);
@@ -82,19 +88,16 @@ public class PrestigeManager : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
-    private bool SetMorb ()
+    private void SetMorb()
     {
-        int l = _currentLvl;
         Morb.currentValue = Prestige;
-        Morb.levelStartPoint = Levels[_currentLvl].PrestigeThreshold;
-        if (_currentLvl + 1 < Levels.Count)
+        Morb.nextLevelValue = Levels[_currentLvl].PrestigeThreshold;
+        if (_currentLvl == 0)
         {
-            Morb.nextLevelValue = Levels[_currentLvl+1].PrestigeThreshold;
-
-            return false;
+            Morb.levelStartPoint = 0;
+            return;
         }
-        Morb.nextLevelValue = _currentLvl;
-        return true;
+        Morb.levelStartPoint = Levels[_currentLvl - 1].PrestigeThreshold;
     }
 }
 [System.Serializable]
