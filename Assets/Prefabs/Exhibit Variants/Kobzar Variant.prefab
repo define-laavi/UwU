@@ -119,17 +119,17 @@ PrefabInstance:
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: <PickedScale>k__BackingField.x
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: <PickedScale>k__BackingField.y
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: <PickedScale>k__BackingField.z
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}

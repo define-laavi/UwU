@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DisplayName>k__BackingField: Podium
-  <PickedScale>k__BackingField: {x: 0.5, y: 0.5, z: 0.5}
+  <PickedScale>k__BackingField: {x: 0.3, y: 0.3, z: 0.3}
   <Size>k__BackingField: {x: 1, y: 1}
   <SlotType>k__BackingField: 0
   <Tags>k__BackingField: []

@@ -30,6 +30,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
+      propertyPath: <PickedScale>k__BackingField.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <PickedScale>k__BackingField.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <PickedScale>k__BackingField.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
       propertyPath: <Tags>k__BackingField.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -56,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 2103461382519284852, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_Name
-      value: Petrykivkaplate3
+      value: Petrykivkaplate3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
