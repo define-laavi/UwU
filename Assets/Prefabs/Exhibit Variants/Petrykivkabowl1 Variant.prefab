@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 2103461382519284852, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_Name
-      value: Petrykivkabowl1
+      value: Petrykivkabowl1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
@@ -66,17 +66,17 @@ PrefabInstance:
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6805937
+      value: -12.583186
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 1.0420012
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5152502
+      value: -10.112996
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 1544232719784394131, guid: 0aafbb9c293dd1a4ea493811400a2667,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: 1544232719784394131, guid: 0aafbb9c293dd1a4ea493811400a2667,
         type: 3}
