@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using Unity.AI.Navigation;
 
 public class Exhibitionist : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Exhibitionist : MonoBehaviour
     private IExhibitionObject highlightedPickable;
     private SlotGrid highlightedSlotGrid;
 
+    [SerializeField] private NavMeshSurface MicrosoftSurface;
     [SerializeField] private AudioClip[] WeightSounds;
     [SerializeField] private AudioClip PlaceSound;
     [SerializeField] private AudioSource CharacterSource;
@@ -84,6 +86,8 @@ public class Exhibitionist : MonoBehaviour
                         {
                             Area.Recalculate();
                         }
+
+                        MicrosoftSurface.BuildNavMesh();
                     }
                 }
                 break;
@@ -114,6 +118,7 @@ public class Exhibitionist : MonoBehaviour
 
                         ExhibitionistState = ExhibitionistState.Empty;
 
+                        MicrosoftSurface.BuildNavMesh();
                     }
                 }
 
