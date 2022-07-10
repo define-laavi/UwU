@@ -8,11 +8,12 @@ using DG.Tweening;
 public class MainMenu : MonoBehaviour
 {
     public AudioSource source;
-    public Image FadeScreen;
+    public AudioSource theSoundOfTheVoid;
+    public CanvasGroup FadeScreen;
     public CanvasGroup EnterText;
     void Start()
     {
-        
+        theSoundOfTheVoid.Play();
     }
 
     void Update()
@@ -20,7 +21,7 @@ public class MainMenu : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.Return))
         {
             source.Play();
-
+            StartCoroutine(Fade());
         }
     }
 
@@ -30,5 +31,7 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         FadeScreen.DOFade(1, 2f);
         yield return new WaitForSeconds (2f);
+        //TODO: Switch scene
+        SceneManager.LoadScene("Level");
     }
 }
