@@ -93,6 +93,9 @@ public class Exhibitionist : MonoBehaviour
                     pickableHintText.text = "Press '<b>LMB</b>' to place";
                     if (Input.GetMouseButtonDown(0))
                     {
+
+                        CharacterSource.PlayOneShot(PlaceSound);
+
                         RuntimeConfig.IsBuilding = true;
                         var pickableTransform = highlightedPickable.transform;
                         pickableTransform.parent = null;

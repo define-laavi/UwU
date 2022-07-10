@@ -225,11 +225,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7d9b29751c0347d41a2ad93d22295c07, type: 3}
   - {fileID: 8300000, guid: fc0ddff71a2b94b43aabef79c0315f38, type: 3}
   - {fileID: 8300000, guid: 44973ccbcf0bb2649b3ff5efc034bfd6, type: 3}
-  PlaceSound: {fileID: 0}
+  PlaceSound: {fileID: 8300000, guid: c363e90edb7adb14390451bfba0b5c40, type: 3}
   CharacterSource: {fileID: 1931102807}
-  FootstepSource: {fileID: 0}
-  PlayerController: {fileID: 0}
-  rigid: {fileID: 0}
+  FootstepSource: {fileID: 1931102815}
+  PlayerController: {fileID: 4459864850019384740}
+  rigid: {fileID: 4459864850019384741}
 --- !u!82 &1931102807
 AudioSource:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5eddfa1068316e34db0b4de4960371d9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c47b75d9a1846d6438b465d38db88d4f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
