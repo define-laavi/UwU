@@ -224,6 +224,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2852196957930715028, guid: ff5fb3b14006458438de709df83ac8dc,
+        type: 3}
+      propertyPath: IsAvailable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4286518974755671165, guid: ff5fb3b14006458438de709df83ac8dc,
         type: 3}
       propertyPath: m_RootOrder
@@ -5410,6 +5415,10 @@ PrefabInstance:
       propertyPath: DescriptionMonit
       value: 
       objectReference: {fileID: 719279479}
+    - target: {fileID: 1681846198, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: MicrosoftSurface
+      value: 
+      objectReference: {fileID: 2058780980}
     - target: {fileID: 1681846198, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: pickableHintText
       value: 
