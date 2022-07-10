@@ -27,10 +27,10 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        ExhibitionArea[] ars = OpenMuzeumManager.Instance.Areas;
-        for (int i = 0; i < ars.Length; i++)
+        List<ExhibitionArea> ars = PrestigeManager.Instance.Areas;
+        for (int i = 0; i < ars.Count; i++)
         {
-            if (!ars[i].IsAvailable)
+            if (!ars[i].IsAvailable || ars[i].objectsInArea.Count == 0)
             {
                 continue;
             }
@@ -41,14 +41,8 @@ public class NPC : MonoBehaviour
         }
     }
 
-    bool lastState = true;
     void Update()
     {
-        if (lastState && !RuntimeConfig.MuzeumOpened)
-        {
-            Destroy(gameObject);
-        }
-        lastState = RuntimeConfig.MuzeumOpened;
 
         if (_isStanding)
         {
@@ -65,6 +59,7 @@ public class NPC : MonoBehaviour
         {
             if (_isGoingToExit)
             {
+                PrestigeManager.Instance._currentNPC--;
                 Destroy(gameObject);
             }
 
@@ -111,7 +106,6 @@ public class NPC : MonoBehaviour
         if (indexes.Count == 0)
         {
             _isInRoom = false;
-            Agent.SetDestination(_currentRoom.exit.position);
             return;
         }
 
@@ -202,7 +196,7 @@ public class NPC : MonoBehaviour
     private void ExitMuzeum()
     {
         _isGoingToExit = true;
-        Agent.SetDestination(OpenMuzeumManager.Instance.ExitPoint.position);
+        Agent.SetDestination(PrestigeManager.Instance.EndPoint.position);
     }
 }
 
