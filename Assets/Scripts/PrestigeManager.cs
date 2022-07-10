@@ -48,7 +48,7 @@ public class PrestigeManager : MonoBehaviour
             Areas[i].gameObject.SetActive(false);
         }*/
 
-        LvlUPopUP.gameObject.SetActive(true);
+        LvlUPopUP.gameObject.SetActive(false);
 
     }
 
