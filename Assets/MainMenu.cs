@@ -32,5 +32,6 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         FadeScreen.DOFade(1, 2f);
         yield return new WaitForSeconds (2f);
+        SceneManager.LoadScene("Level");
     }
 }
