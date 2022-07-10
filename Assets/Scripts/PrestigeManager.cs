@@ -57,7 +57,7 @@ public class PrestigeManager : MonoBehaviour
 
         }
 
-        if (Prestige > Levels[_currentLvl].PrestigeThreshold)
+        if (Prestige >= Levels[_currentLvl].PrestigeThreshold)
         {
             Levels[_currentLvl].OnEnd.Invoke();
             _currentLvl++;
