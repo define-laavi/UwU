@@ -10,6 +10,8 @@ public class Exhibitionist : MonoBehaviour
     [SerializeField] private Transform holder;
     [SerializeField] private TMPro.TextMeshProUGUI pickableHintText;
 
+    [SerializeField] private Material previewMaterial;
+    
     private IExhibitionObject highlightedPickable;
     private SlotGrid highlightedSlotGrid;
 
@@ -64,7 +66,7 @@ public class Exhibitionist : MonoBehaviour
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
                         CharacterSource.PlayOneShot(WeightSounds[Random.Range(0,WeightSounds.Length)]);
-
+                        previewMaterial.SetFloat("_Show", 1);
                         ExhibitionArea Area = objectTransform.GetComponentInParent<ExhibitionArea>();
 
                         highlightedPickable = objectTransform.GetComponent<IExhibitionObject>();
@@ -103,7 +105,7 @@ public class Exhibitionist : MonoBehaviour
                         pickableTransform.rotation = transformation.rotation * Quaternion.Euler(0, rotation * 90, 0);
                         pickableTransform.localScale = Vector3.one;
                         pickableTransform.parent = SlotRaycaster.GetActiveGrid().transform;
-
+                        previewMaterial.SetFloat("_Show", 0);
                         ExhibitionArea Area = pickableTransform.GetComponentInParent<ExhibitionArea>();
                         if (Area != null)
                         {
