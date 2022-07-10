@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: <Tags>k__BackingField.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
@@ -153,6 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[3].tag
+      value: National Symbol
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
       propertyPath: <Tags>k__BackingField.Array.data[0].name
       value: Author
       objectReference: {fileID: 0}
@@ -166,10 +171,15 @@ PrefabInstance:
       propertyPath: <Tags>k__BackingField.Array.data[2].name
       value: Type
       objectReference: {fileID: 0}
+    - target: {fileID: 678899120127924666, guid: 8ffe3608dd816584e9d29804159843e8,
+        type: 3}
+      propertyPath: <Tags>k__BackingField.Array.data[3].name
+      value: Type
+      objectReference: {fileID: 0}
     - target: {fileID: 2103461382519284852, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
       propertyPath: m_Name
-      value: Kobzar
+      value: Kobzar Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6671579216119991436, guid: 8ffe3608dd816584e9d29804159843e8,
         type: 3}
