@@ -155,13 +155,13 @@ public class FirstPersonController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-
+        /*
         if(crosshair)
         {
             crosshairObject.sprite = crosshairImage;
             crosshairObject.color = crosshairColor;
         }
-
+        */
         #region Sprint Bar
 
         sprintBarCG = GetComponentInChildren<CanvasGroup>();
