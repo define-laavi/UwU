@@ -11,6 +11,9 @@ public class Exhibitionist : MonoBehaviour
     private IExhibitionObject highlightedPickable;
     private SlotGrid highlightedSlotGrid;
 
+    [SerializeField] private AudioClip[] WeightSounds;
+    [SerializeField] private AudioSource CharacterSource;
+
     private int rotation;
     public ExhibitionistState ExhibitionistState { get; private set; }
     void Update()
