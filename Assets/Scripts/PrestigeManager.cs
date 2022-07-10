@@ -32,11 +32,11 @@ public class PrestigeManager : MonoBehaviour
         _currentLvl = 0;
         SetMorb();
         Prestige = 0;
-        Areas[0].gameObject.SetActive(true);
+        Areas[0].gameObject.SetActive(true);/*
         for (int i = 1; i < Areas.Count; i++)
         {
             Areas[i].gameObject.SetActive(false);
-        }
+        }*/
     }
 
     public static void Recalculate ()
