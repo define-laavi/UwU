@@ -1,20 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class debugfilllist : MonoBehaviour
+public class TimeContextBinder : MonoBehaviour
 {
-    public List<Exhibit> exhibits;
-    
+    public TMPro.TextMeshProUGUI clock;
     // Start is called before the first frame update
     void Start()
     {
-        RuntimeConfig.OwnedExhibits = exhibits;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        clock.text = DateTime.Now.ToString("hh:mm tt");
     }
 }

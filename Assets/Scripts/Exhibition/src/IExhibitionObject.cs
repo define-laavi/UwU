@@ -14,12 +14,12 @@ public abstract class IExhibitionObject : MonoBehaviour
 
     public abstract void OnPlace();
     public virtual void OnPickUp(){}
-    public string Highlight()
+    public virtual string Highlight()
     {
-        return DisplayName;
+        return $"Press '<b>RMB</b>' to pick up <b>{DisplayName}";
     }
 
-    public bool TryPick(Exhibitionist exhibitionist, out Transform transform)
+    public virtual bool TryPick(Exhibitionist exhibitionist, out Transform transform)
     {
         if (exhibitionist.ExhibitionistState == ExhibitionistState.Holding)
         {
