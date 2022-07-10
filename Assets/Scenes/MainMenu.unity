@@ -560,7 +560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 55686317}
-  theSoundOfTheVoid: {fileID: 55686319}
   FadeScreen: {fileID: 1511449343}
   EnterText: {fileID: 1609169982}
 --- !u!82 &55686319

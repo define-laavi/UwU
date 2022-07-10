@@ -8,7 +8,7 @@ using DG.Tweening;
 public class MainMenu : MonoBehaviour
 {
     public AudioSource source;
-    public Image FadeScreen;
+    public CanvasGroup FadeScreen;
     public CanvasGroup EnterText;
     private bool _lock;
     void Start()
