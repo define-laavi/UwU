@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class Exhibitionist : MonoBehaviour
 {
@@ -17,10 +18,13 @@ public class Exhibitionist : MonoBehaviour
 
     [Header("Description")]
     public float MoveThreshold = 0.1f;
+    public float ShowedMoveThreshold = 0.3f;
     [Range(0.2f, 5f)] public float ShowDelay;
     [SerializeField] private Transform DescriptionMonit;
     [SerializeField] private CanvasGroup group;
     [SerializeField] private TextMeshProUGUI DescriptionText;
+    [SerializeField] private RectTransform DescriptionScaler;
+    private bool _descriptionShow = false;
     private float _timer = 0;
     private Vector3 _startCountingPosition;
 
@@ -113,12 +117,29 @@ public class Exhibitionist : MonoBehaviour
             return;
         }
 
-        float smag = (transform.position - _startCountingPosition).sqrMagnitude;
-        if (smag > MoveThreshold)
+        if (highlightedPickable == null || highlightedPickable.GetType() != typeof(Exhibit))
         {
-            _startCountingPosition = transform.position;
-            _timer = 0;
             return;
+        }
+
+        float smag = (transform.position - _startCountingPosition).sqrMagnitude;
+        if (_descriptionShow)
+        {
+            if (smag > ShowedMoveThreshold)
+            {
+                _descriptionShow = false;
+                group.DOKill();
+                group.DOFade(0, 2 * group.alpha / 1f);
+                DescriptionScaler.DOKill();
+                DescriptionScaler.DOSizeDelta(Vector2.zero, 2f * group.alpha /1f);
+            }
+        } else {
+            if (smag > MoveThreshold)
+            {
+                _startCountingPosition = transform.position;
+                _timer = 0;
+                return;
+            }
         }
 
         _timer += Time.deltaTime;
@@ -129,7 +150,20 @@ public class Exhibitionist : MonoBehaviour
         }
 
         _timer = float.NegativeInfinity;
+        Exhibit exh = (Exhibit)highlightedPickable;
+        DescriptionText.text = "<align=\"center\">" + exh.DisplayName + "</align>\n" + exh.Description;
+        _descriptionShow = true;
 
+        StartCoroutine(Open());
+    }
+
+    IEnumerator Open ()
+    {
+        
+        group.DOFade(1, 2f);
+        DescriptionScaler.DOSizeDelta(new Vector2(200, 250), 2f);
+
+        yield return new WaitForSeconds(2f);
     }
 }
 
