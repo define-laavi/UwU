@@ -14,7 +14,7 @@ Shader "Custom/Warehouse"
 
 		Pass {
 			Blend Zero One
-			ZWrite On
+			ZWrite Off
 
 			Stencil {
 				Ref[_StencilID]

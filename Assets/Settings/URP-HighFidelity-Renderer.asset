@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: RenderObjects
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     passTag: RenderObjects
     Event: 300
@@ -25,15 +25,15 @@ MonoBehaviour:
     overrideMaterial: {fileID: -7498800192905653981, guid: 5f479770e5a4f2c42a0370349eb7db83,
       type: 3}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 1
+    overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 1
       stencilReference: 1
-      stencilCompareFunction: 8
+      stencilCompareFunction: 3
       passOperation: 0
-      failOperation: 0
+      failOperation: 1
       zFailOperation: 0
     cameraSettings:
       overrideCamera: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_AssetVersion: 1
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4343
+    m_Bits: 2147483647
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
