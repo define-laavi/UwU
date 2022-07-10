@@ -23,8 +23,13 @@ public class KeymasterSpeedrun : MonoBehaviour
             if (!isHintShown)
             {
                 hint.DOFade(1, 0.5f);
+                isHintShown = true;
             }
-            isHintShown = true;
+            else
+            {
+                HideHint();
+            }
+            
             
         }
     }
