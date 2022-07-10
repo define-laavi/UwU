@@ -13,7 +13,7 @@ public class PrestigeManager : MonoBehaviour
 
     public int Prestige;
     public List<ExhibitionArea> Areas = new List<ExhibitionArea>();
-
+    public List<Transform> NPCs = new List<Transform>();
     public MorbContextBinder Morb;
 
     public Image FadeImage;
@@ -37,7 +37,7 @@ public class PrestigeManager : MonoBehaviour
     void Start()
     {
         _currentLvl = 0;
-        StartCoroutine(SpawnNPC());
+     //   StartCoroutine(SpawnNPC());
         Prestige = 0;
         Areas[0].gameObject.SetActive(true);
         Areas[0].Recalculate();
@@ -56,7 +56,7 @@ public class PrestigeManager : MonoBehaviour
     {
         Instance.RecalculatePrestige();
     }
-
+    int maxPrestige = 0;
     private void RecalculatePrestige()
     {
         Prestige = 0;
@@ -88,6 +88,18 @@ public class PrestigeManager : MonoBehaviour
         else
         {
             Morb.currentValue = Prestige;
+        }
+
+        if (Prestige > maxPrestige)
+        {
+            for (int i = maxPrestige; i < Prestige; i++)
+            {
+                if (i < NPCs.Count)
+                {
+                    NPCs[i].gameObject.SetActive(true);
+                }
+            }
+            maxPrestige = Prestige;
         }
 
     }
