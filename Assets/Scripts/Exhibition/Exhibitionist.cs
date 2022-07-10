@@ -12,12 +12,18 @@ public class Exhibitionist : MonoBehaviour
     private SlotGrid highlightedSlotGrid;
 
     [SerializeField] private AudioClip[] WeightSounds;
+    [SerializeField] private AudioClip PlaceSound;
     [SerializeField] private AudioSource CharacterSource;
+    [SerializeField] private AudioSource FootstepSource;
 
+    [SerializeField] private FirstPersonController PlayerController;
+    [SerializeField] private Rigidbody rigid;
     private int rotation;
     public ExhibitionistState ExhibitionistState { get; private set; }
     void Update()
     {
+        FootstepSource.volume = rigid.velocity.magnitude / PlayerController.walkSpeed;
+
         pickableHintText.text = "";
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -37,6 +43,8 @@ public class Exhibitionist : MonoBehaviour
                 {
                     if (highlightedPickable.TryPick(this, out var objectTransform))
                     {
+                        CharacterSource.PlayOneShot(WeightSounds[Random.Range(0,WeightSounds.Length)]);
+
                         ExhibitionArea Area = objectTransform.GetComponentInParent<ExhibitionArea>();
 
                         highlightedPickable = objectTransform.GetComponent<IExhibitionObject>();
